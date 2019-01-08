@@ -116,4 +116,7 @@ kafka-console-consumer --bootstrap-server kafka1:19092 --topic world --from-begi
 * https://docs.confluent.io/current/installation/docker/docs/installation/single-node-client.html
 * https://ci.apache.org/projects/flink/flink-docs-release-1.7/ops/deployment/docker.html
 * https://hub.docker.com/_/flink
+* https://github.com/dataArtisans/kafka-example
+* https://github.com/apache/flink/tree/master/flink-end-to-end-tests/flink-confluent-schema-registry
+* https://github.com/simplesteph/kafka-stack-docker-compose
 
