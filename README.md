@@ -66,7 +66,7 @@ kafka-console-consumer --bootstrap-server kafka1:19092 --topic foo --from-beginn
 # Flink
 
 # Flink - Kafka Streaming job (basic)
-$ JOBMANAGER_CONTAINER=$(docker ps --filter name=jobmanager --format={{.ID}})
+$ export JOBMANAGER_CONTAINER=$(docker ps --filter name=jobmanager --format={{.ID}})
 $ docker cp flink-kafka/target/flink-kafka-1.0-SNAPSHOT.jar "$JOBMANAGER_CONTAINER":/flink-kafka-1.0-SNAPSHOT.jar
 $ docker exec -t -i "$JOBMANAGER_CONTAINER" flink run /flink-kafka-1.0-SNAPSHOT.jar \
 --bootstrap.servers kafka1:19092 \
@@ -90,7 +90,7 @@ $ cd -
 ```
 
 ```
-$ JOBMANAGER_CONTAINER=$(docker ps --filter name=jobmanager --format={{.ID}})
+$ export JOBMANAGER_CONTAINER=$(docker ps --filter name=jobmanager --format={{.ID}})
 $ docker cp flink-kafka-schema-registry/target/flink-kafka-schema-registry-1.0-SNAPSHOT.jar "$JOBMANAGER_CONTAINER":/flink-kafka-schema-registry-1.0-SNAPSHOT.jar
 $ docker exec -t -i "$JOBMANAGER_CONTAINER" flink run /flink-kafka-schema-registry-1.0-SNAPSHOT.jar \
 --input-topic hello \
@@ -99,7 +99,7 @@ $ docker exec -t -i "$JOBMANAGER_CONTAINER" flink run /flink-kafka-schema-regist
 --schema-registry-url http://kafka-schema-registry:8089/ \
 --group.id cgrp1
 
-$ KAFKA_BROKER=$(docker ps --filter name=kafka1 --format={{.ID}})
+$ export KAFKA_BROKER=$(docker ps --filter name=kafka1 --format={{.ID}})
 $ docker exec -t -i "$KAFKA_BROKER" \
 kafka-console-consumer --bootstrap-server kafka1:19092 --topic world --from-beginning --max-messages 100
 
