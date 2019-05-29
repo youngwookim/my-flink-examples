@@ -34,7 +34,7 @@ $ docker-compose up
 ```
 # Kafka
 
-$ KAFKA_BROKER=$(docker ps --filter name=kafka1 --format={{.ID}})
+$ export KAFKA_BROKER=$(docker ps --filter name=kafka1 --format={{.ID}})
 $ docker exec -t -i "$KAFKA_BROKER" \
 kafka-topics --create --topic foo --partitions 4 --replication-factor 1 \
 --if-not-exists --zookeeper zoo1:2181
