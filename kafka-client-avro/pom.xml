@@ -14,7 +14,7 @@
 		<!-- Keep versions as properties to allow easy modification -->
 		<confluent.version>5.0.0</confluent.version>
 		<kafka.version>1.1.0</kafka.version>
-		<avro.version>1.8.2</avro.version>
+		<avro.version>1.11.4</avro.version>
 		<!-- Maven properties for compilation -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
